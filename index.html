@@ -200,6 +200,29 @@ body::before{
 .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.55s ease,transform 0.55s cubic-bezier(0.34,1.2,0.64,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
+/* CONTACT SECTION */
+.contact-section{margin-bottom:60px}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.contact-card{background:white;border:1px solid rgba(78,205,196,0.15);border-radius:22px;padding:28px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:var(--card-s);transition:all 0.25s cubic-bezier(0.34,1.2,0.64,1);text-decoration:none;position:relative;overflow:hidden}
+.contact-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.contact-card.wa::before{background:linear-gradient(90deg,#25d366,#128c7e)}
+.contact-card.tg::before{background:linear-gradient(90deg,#229ed9,#0088cc)}
+.contact-card.gh::before{background:linear-gradient(90deg,#333,#666)}
+.contact-card:hover{transform:translateY(-5px);box-shadow:var(--card-sh)}
+.contact-ico{width:62px;height:62px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:16px;border:1px solid rgba(78,205,196,0.15)}
+.contact-card.wa .contact-ico{background:rgba(37,211,102,0.1);border-color:rgba(37,211,102,0.2)}
+.contact-card.tg .contact-ico{background:rgba(34,158,217,0.1);border-color:rgba(34,158,217,0.2)}
+.contact-card.gh .contact-ico{background:rgba(51,51,51,0.07);border-color:rgba(51,51,51,0.15)}
+.contact-name{font-size:15px;font-weight:800;color:var(--dark);margin-bottom:5px}
+.contact-val{font-size:12px;font-family:'JetBrains Mono',monospace;font-weight:600;margin-bottom:14px}
+.contact-card.wa .contact-val{color:#25d366}
+.contact-card.tg .contact-val{color:#229ed9}
+.contact-card.gh .contact-val{color:#555}
+.contact-open{display:inline-flex;align-items:center;gap:5px;padding:7px 18px;border-radius:100px;font-size:11px;font-weight:800;font-family:'Nunito',sans-serif;border:none;cursor:pointer;transition:all 0.2s}
+.contact-card.wa .contact-open{background:rgba(37,211,102,0.12);color:#128c7e}
+.contact-card.tg .contact-open{background:rgba(34,158,217,0.12);color:#0088cc}
+.contact-card.gh .contact-open{background:rgba(51,51,51,0.08);color:#333}
+
 ::-webkit-scrollbar{width:6px}
 ::-webkit-scrollbar-track{background:var(--teal-bg2)}
 ::-webkit-scrollbar-thumb{background:var(--teal-xl);border-radius:3px}
@@ -230,13 +253,10 @@ body::before{
     <button class="sm-close" onclick="closeMenu()">✕</button>
   </div>
   <div class="sm-nav">
-    <button class="sm-btn" onclick="navigate('https://mezuka-md-v4-new-production.up.railway.app/')"><span class="sm-ico">🔗</span><span class="sm-lbl">Connect Bot</span><span class="sm-arr">›</span></button>
-    <button class="sm-btn" onclick="navigate('settings.html')"><span class="sm-ico">⚙️</span><span class="sm-lbl">Settings</span><span class="sm-arr">›</span></button>
+    <button class="sm-btn" onclick="navigate('https://mezuka-md-v4-new-production.up.railway.app/')"><span class="sm-ico">🔗</span><span class="sm-lbl">Mezuka MD</span><span class="sm-arr">›</span></button>
+    <button class="sm-btn" onclick="navigate('https://opt-production-3749.up.railway.app')"><span class="sm-ico">⚡</span><span class="sm-lbl">Mezuka OPT</span><span class="sm-arr">›</span></button>
     <div class="sm-sep"></div>
-    <button class="sm-btn" onclick="navigate('team.html')"><span class="sm-ico">👥</span><span class="sm-lbl">Admin Team</span><span class="sm-arr">›</span></button>
-    <button class="sm-btn" onclick="navigate('contact.html')"><span class="sm-ico">📩</span><span class="sm-lbl">Contact Us</span><span class="sm-arr">›</span></button>
-    <div class="sm-sep"></div>
-    <button class="sm-btn" onclick="navigate('tharidu.html')"><span class="sm-ico">🕊️</span><span class="sm-lbl">Who is Tharidu?</span><span class="sm-arr">›</span></button>
+    <button class="sm-btn" onclick="closeMenu();setTimeout(()=>{document.getElementById('contact').scrollIntoView({behavior:'smooth',block:'start'})},300)"><span class="sm-ico">📩</span><span class="sm-lbl">Contact Us</span><span class="sm-arr">›</span></button>
   </div>
   <div class="sm-footer">Powered by <span>Mezuka MD V4</span><br>made by <span>nimeshka mihiran</span></div>
 </nav>
@@ -246,7 +266,7 @@ body::before{
   <div class="nav-logo">
     <div class="tb-menu-btn" onclick="openMenu()"><span></span><span></span><span></span></div>
     <div class="nav-logo-img"><img src="https://files.catbox.moe/qhrzt2.jpg" alt="Mezuka"></div>
-    <div class="nav-brand">Mezuka MD <span>V4</span></div>
+    <div class="nav-brand">Mezuka MD <span>V4</span> <span style="font-size:10px;font-weight:700;opacity:0.7;-webkit-text-fill-color:unset;color:var(--gray)">WhatsApp Bot</span></div>
   </div>
   <div class="nav-status"><div class="nav-dot"></div>ONLINE</div>
   <a class="nav-connect" href="https://mezuka-md-v4-new-production.up.railway.app/" target="_blank">🔗 Connect Bot</a>
@@ -265,6 +285,7 @@ body::before{
     <p class="hero-sub">The most powerful WhatsApp bot built for real users. 100+ commands, smart automation, and full control — all in one.</p>
     <div class="hero-cta">
       <a class="btn-primary" href="https://mezuka-md-v4-new-production.up.railway.app/" target="_blank">🔗 Connect Your Bot <span>→</span></a>
+      <a class="btn-primary" href="https://opt-production-3749.up.railway.app" target="_blank" style="background:linear-gradient(135deg,var(--pink),#e0457b);">⚡ Mezuka OPT <span>→</span></a>
       <a class="btn-ghost" href="#features">✨ See Features</a>
     </div>
   </div>
@@ -357,6 +378,35 @@ body::before{
     </div>
   </div>
 
+  <!-- CONTACT -->
+  <div class="contact-section reveal" id="contact">
+    <div class="sec-hd">
+      <div class="sec-pill">📩 Get In Touch</div>
+      <div class="sec-title">Contact Us</div>
+      <div class="sec-sub">Reach out to Nimeshka Mihiran via WhatsApp, Telegram or GitHub.</div>
+    </div>
+    <div class="contact-grid">
+      <a class="contact-card wa" href="https://wa.me/94721584279" target="_blank">
+        <div class="contact-ico">💬</div>
+        <div class="contact-name">WhatsApp</div>
+        <div class="contact-val">+94 721 584 279</div>
+        <span class="contact-open">Open Chat →</span>
+      </a>
+      <a class="contact-card tg" href="https://t.me/Nimeshmihiranga" target="_blank">
+        <div class="contact-ico">✈️</div>
+        <div class="contact-name">Telegram</div>
+        <div class="contact-val">@Nimeshmihiranga</div>
+        <span class="contact-open">Open Chat →</span>
+      </a>
+      <a class="contact-card gh" href="https://github.com/NimeshMihiranga" target="_blank">
+        <div class="contact-ico">🐙</div>
+        <div class="contact-name">GitHub</div>
+        <div class="contact-val">NimeshMihiranga</div>
+        <span class="contact-open">View Profile →</span>
+      </a>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-logo-row">
@@ -364,7 +414,8 @@ body::before{
       <div class="fl-name">Mezuka MD <span>V4</span></div>
     </div>
     <div class="footer-copy">
-      Powered by <strong>Mezuka MD V4</strong> · Owner: <strong>Nimeshka Mihiran</strong><br>
+      Powered by <strong>Mezuka MD V4</strong> · Owner: <strong>Nimeshka Mihiran</strong> · Age: <strong>18</strong><br>
+      WhatsApp: <a href="https://wa.me/94721584279" target="_blank" style="color:var(--teal-d);text-decoration:none;font-weight:700">+94 721 584 279</a> · GitHub: <a href="https://github.com/NimeshMihiranga" target="_blank" style="color:var(--teal-d);text-decoration:none;font-weight:700">NimeshMihiranga</a><br>
       rest in peace tharidu gimhana 🕊️
     </div>
   </footer>
@@ -375,8 +426,8 @@ body::before{
 <div class="startup-notif" id="startupNotif">
   <div class="sn-icon"><img src="https://files.catbox.moe/qhrzt2.jpg" alt="logo"></div>
   <div class="sn-body">
-    <div class="sn-title">made by nimeshka mihiran</div>
-    <div class="sn-msg">rest in peace tharidu gimhana 🕊️</div>
+    <div class="sn-title">Mezuka MD WhatsApp Bot</div>
+    <div class="sn-msg">by Nimeshka Mihiran · Age 18 · <a href="https://github.com/NimeshMihiranga" target="_blank" style="color:var(--teal-d);text-decoration:none">GitHub</a></div>
     <div class="sn-time">just now</div>
   </div>
   <button class="sn-close" onclick="document.getElementById('startupNotif').classList.remove('show')">✕</button>
