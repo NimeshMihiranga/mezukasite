@@ -2,6 +2,7 @@
   "codes": [
     { "code": "MEZUKA50", "coins": 50, "maxUses": 1 },
     { "code": "BLACKCAT100", "coins": 100, "maxUses": 1 },
+    { "code": "BLACKCAT10", "coins": 10, "maxUses": 100 },
     { "code": "MEZUKA20", "coins": 20, "maxUses": 10 }
   ]
 }
